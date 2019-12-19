@@ -47,10 +47,6 @@
             "Tests\\": "tests/"
         }
     },
-     "post-install-cmd": [
-     "php artisan clear-compiled",
-     "chmod -R 777 public/"
- ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
