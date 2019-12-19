@@ -6,7 +6,7 @@ use App\Venta;
 use App\Coche;
 use App\Traits\Bastidor;
 use App\Mail\CompraCocheEmail;
-use App\Mail\solicitarPago;
+use App\Mail\SolicitarPago;
 use Auth;
 use Mail;
 use Session;
@@ -195,7 +195,7 @@ class VentaController extends Controller
         //dd("solicitando pago");
         $venta = Venta::findOrFail($id);
         $user = User::findOrFail($venta->id_cliente);// busco el cliente que sale en la venta
-        Mail::to($user->email)->send(new solicitarPago($venta));// envío el correo al correo del cliente buscado
+        Mail::to($user->email)->send(new SolicitarPago($venta));// envío el correo al correo del cliente buscado
         return back();
     }
 }
