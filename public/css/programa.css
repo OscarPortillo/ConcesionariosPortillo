@@ -1,0 +1,352 @@
+.crearCoche {
+    margin-bottom: 10px;
+}
+
+/*Imagenes Reponsive*/
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/*aplicar el color correcto depués*/
+}
+
+/*************************CABECERA*****************************/
+.cabecera {
+  background-color: #f5f5f5;
+}
+.nav-link {
+  color: black;
+}
+.listaCabecera:hover{
+  background-color: #78d446;
+  border-radius: 8px;
+}
+.titulo {
+  font-size: 84px;
+}
+/*************************CABECERA*****************************/
+
+/*************************FORMULARIOS AUTH*****************************/
+.cabeceraFormAuth {
+  background-color: #f5f5f5;
+}
+
+.botonEntrar, .registrarse {
+  border-color: #5cb85c;
+  background-color: #5cb85c;
+}
+
+.botonEntrar:hover , .registrarse:hover{
+  border-color: #5cb85c;
+  background-color: #5cb85c;
+}
+
+.olvidadoContraseña {
+  text-decoration: none;
+  color: #3490dc;
+}
+
+.olvidadoContraseña:hover {
+
+  color: red;
+}
+.cerrarSesion:hover {
+  background-color: red;
+}
+.cerrarSesion a:hover {
+  color: white;
+  background-color: red;
+}
+/*************************FORMULARIOS AUTH*****************************/
+
+/*************************ESTILOS PARA LAS IMAGENES DE LOS COCHES*****************************/
+.sectionCoche {
+	max-width: 96%;
+	margin: 0 auto;
+	column-count: 3;
+}
+.imgCoche {
+	display: block;
+	max-width: 100%;
+}
+.infoCoche {
+	background-color: white;
+	border-radius: 4px;
+	margin-bottom: 20px;
+	box-shadow: 0 2px 6px rgba(50, 50, 90,.1);
+	overflow: hidden;
+	break-inside: avoid-column;
+}
+.infoCoche h5,h6,p {
+	padding: 10px;
+	font-family: sans-serif;
+	color: #6B7C93;
+	line-height: 1.4em;
+}
+.modal-dialog {/*PARA QUE EL MODAL USE EL 80% DE LA PANTALLA*/
+  max-width: 80%;
+}
+
+
+/*************************ESTILOS PARA LAS IMAGENES DE LOS COCHES*****************************/
+
+/*************************BOTONES*****************************/
+.css-boton {
+  	display: inline-block;
+  	background-color: #E6E6E6;
+  	padding: .5em 1em;
+  	color: #444;
+  	font-family: inherit;
+  	font-size: 100%;
+  	text-align: center;
+  	text-decoration: none;
+  	white-space: nowrap;
+  	cursor: pointer;
+  	border: 1px solid #999;
+  	border: transparent;
+  	border-radius: 2px;
+  	margin: 3px;
+  	-webkit-user-drag: none;
+  	-webkit-user-select: none;
+  	-moz-user-select: none;
+  	-ms-user-select: none;
+  	user-select: none;
+  	border-radius: 5px;
+}
+
+.boton-info, .boton-exito, .boton-advertencia, .boton-error {
+  	color: white;
+  	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.boton-primario {
+  	background-color: #20a867;
+  	color: #fff;
+}
+
+.boton-primario:hover {
+	box-shadow: 0 2px 6px rgba(50, 50, 90,.1);
+	text-decoration: none;
+  	background-color: #449d44;
+  	color: #fff;
+}
+
+.boton-exito {
+  	background: rgb(28, 184, 65); /* verde */
+}
+
+.boton-info {
+  background-color: #78d446;
+  color: black;
+}
+
+.boton-advertencia {
+  	background: rgb(223, 117, 20); /* color naranja */
+}
+
+.boton-error {
+  	background: rgb(202, 60, 60); /* rorjo */
+}
+/*************************BOTONES*****************************/
+
+/*************************BOTONES DESPLEGABLES*****************************/
+.btn-secondary {
+	background-color: #5cb85c;
+	border-color: #5cb85c;
+}
+.btn-secondary:hover {
+	background-color: #5cb85c;
+	border-color: #5cb85c;
+}
+/*************************BOTONES DESPLEGABLES*****************************/
+
+/*************************CARD MODAL*****************************/
+ul.topnav {
+  	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	overflow: hidden;
+  	color: #2f343a;
+  	font-size: 16px;
+}
+
+ul.topnav li {
+	float: left;
+}
+
+ul.topnav li a {
+  	display: block;
+  	text-align: center;
+  	padding: 14px 16px;
+  	text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {
+	background-color: #78d446;
+	color: white;
+}
+
+ul.topnav li a.active {
+	background-color: #4CAF50;
+}
+
+ul.topnav li.right {
+	float: right;
+}
+
+@media screen and (max-width: 600px) {
+  	ul.topnav li.right, 
+  	ul.topnav li {
+  		float: none;
+  	}
+}
+
+/*************************CARD MODAL*****************************/
+.botonEstado{
+	width: 100%;
+    padding: 10px 20px;
+    color: white!important;
+    border-radius: 10px;
+}
+.rojo {
+	background-color: red;
+}
+.verde {
+	background-color: #5cb85c;
+}
+
+/***************************BOTONES DE EDIT DE VENTAS*********************************/
+.estadoVerde {
+	color: white!important;
+	background-color: #5cb85c;
+}
+
+.estadoVerde:hover{
+	background-color: #5cb85c;/*Color verde*/
+}
+.estadoRojo {
+	color: white!important;
+	background-color: red;
+}
+.estadoRojo:hover {
+	background-color: red;
+}
+/***************************BOTONES DE EDIT DE VENTAS*********************************/
+
+/***************************FOOTER*********************************/
+
+.contacto {
+  padding-left: 10%;
+}
+
+.footer > div {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.social {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.icon-btn {
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2em;
+  line-height: 60px;
+  margin: 10px;
+  width: 60px;
+}
+
+.icon-btn:hover {
+  color: #FFFFFF;
+  transform: scale(1.10);
+}
+
+.facebook {
+  color: #3B5998;
+}
+
+.facebook:hover {
+  background-color: #3B5998
+}
+
+.twitter {
+  color: #4099FF;
+}
+
+.twitter:hover {
+  background-color: #4099FF;
+}
+
+.google {
+  color: #DB5A3C;
+}
+
+.google:hover {
+  background-color: #DB5A3C;
+}
+
+.instagram {
+  color: #d6249f;
+}
+
+.instagram:hover {
+  background-color: #5C3D2E;
+}
+
+.github {
+  color: #2A2A2A;
+}
+
+.github:hover {
+  background-color: #2A2A2A;
+}
+/***************************FOOTER*********************************/
+/***************************SLIDER COCHES*********************************/
+
+.w3-content {
+  width: 100%;
+}
+.mySlides {
+  display:none;
+  width: 100%;
+}
+.primero {
+  display: block;
+}
+.w3-left, .w3-right, .w3-badge {
+  cursor:pointer
+}
+.w3-badge {
+  height:13px;width:13px;padding:0
+}
+#bontonesSlider {
+  width: 100%;
+}
+/***************************SLIDER COCHES*********************************/
+.mySlides img{
+  width: 100%;
+}
+/***************************MEDIA QUERYS*********************************/
+@media only screen and (max-width: 768px) {/*para tablets*/
+  .sectionCoche {
+    column-count: 2;
+  }
+}
+@media only screen and (max-width: 640px) { /*para móviles*/
+  .sectionCoche {
+    column-count: 1;
+  }
+  .titulo {
+    font-size: 3em;
+  }
+  .modal-dialog {/*PARA QUE EL MODAL USE EL 100% DE LA PANTALLA*/
+    max-width: 100%;
+  }
+  .contacto {
+    padding-left: 0px;
+  }
+}
+
+/***************************MEDIA QUERYS*********************************/
