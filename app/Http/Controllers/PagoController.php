@@ -13,11 +13,24 @@ class PagoController extends Controller
 	public function index(){
         $venta = session('ventaPendiente');
         $coche = session('coche');
-        dd($coche);
-		return view('pago.pagar',[
+        if (Session::has('ventaPendiente')){
+            // do some thing if the key is exist
+            dd('La sesion ventaPendiente existe');
+        }else{
+          //the key is not exist in the session
+            dd('La sesion ventaPendiente no existe');
+        }
+        if (Session::has('coche')){
+            // do some thing if the key is exist
+            dd('La sesion coche existe');
+        }else{
+          //the key is not exist in the session
+            dd('La sesion coche no existe');
+        }
+		/*return view('pago.pagar',[
             "venta" => $venta,
             "coche" => $coche
-        ]);
+        ]);*/
 	}
 	public function pago(Request $request)
     {
