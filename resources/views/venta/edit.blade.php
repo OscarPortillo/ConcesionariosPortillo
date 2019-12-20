@@ -117,7 +117,7 @@
                                     <h5 class="card-title"><strong>Marca:</strong> {{$coche->marca}}</h5>
                                     <h5 class="card-title"><strong>Modelo:</strong> {{$coche->modelo}}</h5>
                                     <h5 class="card-title"><strong>Año:</strong> {{$coche->año}}</h5>
-                                    <h5 class="card-title"><strong>Precio:</strong> {{$coche->precio}} $</h5>
+                                    <h5 class="card-title"><strong>Precio:</strong> {{number_format($coche->precio, 2)}} $.</h5>
                                     <h5 class="card-title"><strong>Detalle:</strong></h5>
                                     <p class="card-text">{{$coche->detalle}}</p>
                                 </div>

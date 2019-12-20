@@ -24,7 +24,7 @@
                                         <strong>Modelo:</strong> {{$coche->modelo}}
                                     </div>
                                     <div class="caption">
-                                        <strong>Precio:</strong> {{$coche->precio}}
+                                        <strong>Precio:</strong> {{number_format($coche->precio, 2)}} $.
                                     </div>
                                     <div class="caption">
                                         <strong>Año:</strong> {{$coche->año}}

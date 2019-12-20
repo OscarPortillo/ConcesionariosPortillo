@@ -47,7 +47,7 @@
 				<li><strong>Modelo: </strong> {{$coche->modelo}}</li>
 				<li><strong>Matrícula: </strong> {{$coche->matricula}}</li>
 				<li><strong>Año: </strong> {{$coche->año}}</li>
-				<li><strong>Precio: </strong> {{$coche->precio}}</li>
+				<li><strong>Precio: </strong> {{number_format($coche->precio, 2)}} $.</li>
 			</ul>
 		</div>
 		<footer>
