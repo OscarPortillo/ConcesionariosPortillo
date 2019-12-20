@@ -13,6 +13,7 @@ class PagoController extends Controller
 	public function index(){
         $venta = session('ventaPendiente');
         $coche = session('coche');
+        dd($coche);
 		return view('pago.pagar',[
             "venta" => $venta,
             "coche" => $coche
