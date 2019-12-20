@@ -12,6 +12,7 @@
                     @endcan
                     <a href="/ventas" class="css-boton boton-primario">Ver ventas...</a>
                     <br><br>
+                    @if(count($empleados) != 0)
                     <input class="form-control" id="misUsuarios" type="text" placeholder="Buscar...">
                     <br>
                     <div class="table-responsive">
@@ -64,7 +65,12 @@
                             @endforeach
                         </tbody>
                       </table>
-                  </div>
+                </div>
+                @else
+                    <div class="alert alert-danger">
+                        <h1>No hay empleados!!!</h1>
+                    </div>
+                @endif
                     </div>
             </div>
         </div>

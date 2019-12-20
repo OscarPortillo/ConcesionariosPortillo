@@ -64,6 +64,7 @@
 <body>
     <div class="flex-center position-ref full-height">
         <div class="content">
+            <a class="css-boton boton-info" href="{{Request::root()}}/coche">Pagar mas tarde...</a>
             <h1>Compra de {{$coche->marca}} {{$coche->modelo}}</h1>
             <h3>US$ {{number_format($coche->precio, 2)}}</h3>
             <form action="/pago" method="POST">

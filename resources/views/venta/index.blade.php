@@ -8,6 +8,7 @@
                 <div class="card-header">Ventas pendientes</div>
                 <div class="card-body">
                     <div class="table-responsive">
+                       @if(count($ventas) != 0)
                         <table class="table">
                             <thead>
                                 <tr>
@@ -61,6 +62,11 @@
                                     @endforeach
                             </tbody>
                         </table>
+                        @else
+                            <div class="alert alert-danger">
+                                <h1>No hay ventas!!!</h1>
+                            </div>
+                        @endif
                     </div>                                    
                 </div>
             </div>

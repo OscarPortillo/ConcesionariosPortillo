@@ -13,6 +13,7 @@
                     @endcan
                     <input class="form-control" id="misUsuarios" type="text" placeholder="Buscar...">
                     <br>
+                    @if(count($usuarios) != 0)
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -66,6 +67,11 @@
                             </tbody>
                             </table>
                         </div>
+                        @else
+                            <div class="alert alert-danger">
+                                <h1>No hay usuarios!!!</h1>
+                            </div>
+                        @endif
                       {{$usuarios->render()}}
                     </div>
             </div>

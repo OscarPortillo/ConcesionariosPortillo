@@ -9,6 +9,7 @@
                 <div class="card-body">
                     <a href="/cliente/create" class="css-boton boton-primario">Crear nuevo cliente...</a>
                     <br><br>
+                    @if(count($clientes) != 0)
                     <input class="form-control" id="misUsuarios" type="text" placeholder="Buscar...">
                     <br>
                     <div class="table-responsive">
@@ -60,9 +61,14 @@
                                 </tr>
                             @endforeach
                         </tbody>
-                      </table>
-                  </div>
+                    </table>
+                </div>
+                @else
+                    <div class="alert alert-danger">
+                        <h1>No hay usuarios!!!</h1>
                     </div>
+                @endif
+                </div>
             </div>
         </div>
     </div>
