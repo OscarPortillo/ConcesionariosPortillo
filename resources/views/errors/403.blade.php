@@ -82,7 +82,9 @@
         <div class="content">
             <div class="title m-b-md">
                 @if($errorCliente != null)
-                {{$errorCliente}}
+                    {{$errorCliente}}
+                @else 
+                    no tienes acceso!!!
                 @endif
             </div>
 
