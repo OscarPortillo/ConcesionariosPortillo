@@ -81,7 +81,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                @if($errorCliente)!=null)
+                @if($errorCliente != null)
                 {{$errorCliente}}
                 @endif
             </div>
