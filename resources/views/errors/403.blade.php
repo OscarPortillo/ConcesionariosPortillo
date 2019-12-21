@@ -91,7 +91,7 @@
             <div class="links">
                 <a href="/coche">Coches</a>
                 <a href="/users">Usuarios</a>
-                <a href="/vendedor">Empleados</a>
+                <a href="/empleado">Empleados</a>
                 <a href="/cliente">Clientes</a>
                 <a href="/ventas">Ventas</a>
             </div>
