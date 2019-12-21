@@ -71,6 +71,7 @@ class PagoController extends Controller
         }
     }
     public function edit($id){
+        $user = Auth::user(); // obtengo el usuario actualmente logueado        
         $venta = Venta::findOrFail($id);
         $coches = Coche::all();//obtengo todos los coches
         foreach ($coches as $cocheUnico) {
@@ -78,9 +79,16 @@ class PagoController extends Controller
                 $coche = $cocheUnico;
             }
         }
-        return view('pago.pagar',[
-                "venta" => $venta,
-                "coche" => $coche
-                ]);
+        if ($user->id === $venta->id_cliente) {
+            # code...
+            return view('pago.pagar',[
+                    "venta" => $venta,
+                    "coche" => $coche
+            ]);
+        } else {
+            session(['errorCliente' => "Usted no está autorizado a realizar el pago"]);
+                $errorCliente = Session('errorCliente');
+            return view('errors.403',["errorCliente" => $errorCliente]);
+        }
     }
 }
