@@ -86,8 +86,9 @@ class PagoController extends Controller
                     "coche" => $coche
             ]);
         } else {
-            session(['errorCliente' => "Usted no está autorizado a realizar el pago"]);
-                $errorCliente = Session('errorCliente');
+            //session(['errorCliente' => "Usted no está autorizado a realizar el pago"]);
+            //$errorCliente = Session('errorCliente');
+            $errorCliente = "Usted no está autorizado a realizar el pago";
             return view('errors.403',["errorCliente" => $errorCliente]);
         }
     }
