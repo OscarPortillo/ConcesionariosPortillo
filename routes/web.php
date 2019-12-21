@@ -28,12 +28,14 @@ Route::get('/coche/{id}/borrar', 'CocheController@borrarCoche');
 /**********PARA COCHE ****************/
 
 /**********PARA ventas ****************/
+
 Route::get('ventas/{id}/comprar', 'VentaController@comprar');
 Route::get('ventas', 'VentaController@verVentas');
 Route::post('ventas', 'VentaController@store');
 Route::get('ventas/{id}', 'VentaController@actualizarVenta');
 Route::put('ventas/{id}/edit', 'VentaController@confirmarCambio');
 
+Route::get('ventas/{id}/verMiCompra', 'VentaController@verMiCompra');
 
 /*
 Route::get('ventas/{id}/enviarEmailDeCompra', function () {

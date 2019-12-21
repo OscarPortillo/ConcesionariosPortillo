@@ -72,7 +72,7 @@
             <input id="precio" type="hidden" class="form-control" name="venta" value="{{$venta->id }}">
             <input id="precio" type="hidden" class="form-control" name="precioCoche" value="{{$coche->precio }}">
             <h2>US$ {{number_format($coche->precio, 2)}}</h2>
-            <a href="{{$url}}/solicitarPago" class="boton">Continuar</a>
+            <a href="{{$url}}/solicitarPago/{{$venta->id }}/edit" class="boton">Continuar</a>
         </div>
     </div>
 </body>

@@ -1,28 +1,45 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Customer;
 use Stripe\Charge;
 use App\Venta;
+use App\Coche;
 use Session;
-use Illuminate\Http\Request;
+use Auth;
 
 class PagoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 	public function index(){
+        /*$user = Auth::user(); // obtengo el usuario actualmente logueado        
         $venta = Session('ventaPendiente');
         $coche = Session('coche');
         if (Session::has('ventaPendiente') && Session::has('coche')){
-            // do some thing if the key is exist
             //dd('La sesion ventaPendiente existe');
-            return view('pago.pagar',[
-            "venta" => $venta,
-            "coche" => $coche
-        ]);
+            if($user->id === $venta->id_cliente){
+                //dd('Es de este usuario');
+                return view('pago.pagar',[
+                "venta" => $venta,
+                "coche" => $coche
+                ]);
+            } else {
+                session(['errorCliente' => "Usted no está autorizado a realizar el pago"]);
+                $errorCliente = Session('errorCliente');
+                //dd($errorCliente);
+                return view('errors.403',["errorCliente" => $errorCliente]);
+            }
         }else{
-          //the key is not exist in the session
-            return back();
+            dd();
+            return view('pago.pagar',[
+                "venta" => $venta,
+                "coche" => $coche
+                ]);
         }
 
 		/*return view('pago.pagar',[
@@ -52,5 +69,18 @@ class PagoController extends Controller
         } catch (\Exception $ex) {
             return $ex->getMessage();
         }
+    }
+    public function edit($id){
+        $venta = Venta::findOrFail($id);
+        $coches = Coche::all();//obtengo todos los coches
+        foreach ($coches as $cocheUnico) {
+            if( $cocheUnico->numeroBastidor === $venta->bastidorCoche){
+                $coche = $cocheUnico;
+            }
+        }
+        return view('pago.pagar',[
+                "venta" => $venta,
+                "coche" => $coche
+                ]);
     }
 }

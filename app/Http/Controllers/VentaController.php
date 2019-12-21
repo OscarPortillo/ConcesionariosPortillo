@@ -198,4 +198,24 @@ class VentaController extends Controller
         Mail::to($user->email)->send(new SolicitarPago($venta));// envío el correo al correo del cliente buscado
         return back();
     }
+    public function verMiCompra($id) {
+       $venta = Venta::findOrFail($id);;
+        $cliente = User::findOrFail($venta->id_cliente);
+        $empleado = User::findOrFail($venta->id_empleado);
+        $coches = Coche::all();
+        $coche;
+        foreach ($coches as $cocheBuscar) {
+            if($venta->bastidorCoche === $cocheBuscar->numeroBastidor) {
+                $coche = $cocheBuscar;
+            }
+        }
+        // pdf($id);
+        return view("venta.show",
+            [
+                "venta"=>$venta,
+                "cliente"=>$cliente,
+                "empleado"=>$empleado,
+                "coche"=>$coche
+            ]);
+    }
 }

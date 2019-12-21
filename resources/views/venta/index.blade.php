@@ -19,6 +19,7 @@
                                     @can ('update', $user)
                                     <th>Opciones</th>
                                     @endcan
+                                    <th>Pagar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -57,6 +58,16 @@
                                             <a href="/ventas/{{$venta->id}}" class="css-boton boton-primario">Editar</a>
                                         </td>
                                         @endcan
+                                        @if($venta->estado === 'Pendiente' && $user->id === $venta->id_cliente)
+                                        <td>
+                                            <a href="/solicitarPago/{{$venta->id}}/edit" class="css-boton boton-primario">Pagar</a>
+                                        </td>
+                                        @endif
+                                        @if($venta->estado === 'Pagado')
+                                        <td>
+                                            <a href="/ventas/{{$venta->id}}/verMiCompra" class="css-boton boton-primario">ver</a>
+                                        </td>
+                                        @endif
                                     </tr>
                                     @endcan
                                     @endforeach
