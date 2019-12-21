@@ -81,9 +81,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                @if(count($errorCliente)!=0)
-                {{$errorCliente}}
-                @endif
+                Prohibido!!!
             </div>
 
             <div class="links">
