@@ -40,6 +40,7 @@
 				<li><strong>Telefono: </strong>{{$empleado->telefono}}</li>
 			</ul>
 		</div>
+		<hr>
 		<div class="col-md-6">
 			<h5>Información del coche</h5>
 			<ul>
@@ -50,6 +51,7 @@
 				<li><strong>Precio: </strong> {{number_format($coche->precio, 2)}} $.</li>
 			</ul>
 		</div>
+		<hr>
 		<footer>
 			<div class="col-md-12">
 				<h6 class="text-center">©2019 Concesionarios Portillo, S. A.</h6>
