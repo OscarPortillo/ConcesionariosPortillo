@@ -94,6 +94,7 @@
                 <a href="/empleado">Empleados</a>
                 <a href="/cliente">Clientes</a>
                 <a href="/ventas">Ventas</a>
+                <a href="/home">Más</a>
             </div>
         </div>
     </div>

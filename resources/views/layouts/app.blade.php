@@ -43,7 +43,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active listaCabecera">
-                            <a class="nav-link" href="/home">Inicio </a>
+                            <a class="nav-link" href="/">Inicio </a>
                         </li>
                         <li class="nav-item active listaCabecera">
                             <a class="nav-link" href="/coche">Coches </a>
@@ -59,6 +59,9 @@
                         </li>
                         <li class="nav-item active listaCabecera">
                             <a class="nav-link" href="/ventas">Ventas </a>
+                        </li>
+                        <li class="nav-item active listaCabecera">
+                            <a class="nav-link" href="/home">Más...</a>
                         </li>
                     </ul>
 
