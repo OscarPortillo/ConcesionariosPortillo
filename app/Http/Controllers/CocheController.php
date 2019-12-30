@@ -61,23 +61,28 @@ class CocheController extends Controller
             //$nombre = time().$archivo->getClientOriginalName();
             $nombre = time().$request->marca.$request->modelo;
             $archivo->move(public_path()."/images",$nombre);
-        } 
-        $reglas =[
-            //'numeroBastidor' => 'required|unique:coches',
-            'marca'=>'required|max:255|min:3',
-            'modelo'=>'required|max:255|min:1',
-            'precio'=>'required|numeric',
-            'año'=>'required|min:2',
-            'detalle'=>'required|min:10',
-        ];
-        $request->validate($reglas);
-        $coche = new Coche();
-        $bastidor = new Controller(); 
-        $coche->fill($request->all());
-        $coche->numeroBastidor =  $bastidor->generarBastidor();
-        $coche->imagen =  $nombre;
-        $coche->save();
-        return redirect("/coche");
+
+            ///////////////////////////////////
+            $reglas =[
+                //'numeroBastidor' => 'required|unique:coches',
+                'marca'=>'required|max:255|min:3',
+                'modelo'=>'required|max:255|min:1',
+                'precio'=>'required|numeric',
+                'año'=>'required|min:2',
+                'detalle'=>'required|min:10',
+            ];
+            $request->validate($reglas);
+            $coche = new Coche();
+            $bastidor = new Controller(); 
+            $coche->fill($request->all());
+            $coche->numeroBastidor =  $bastidor->generarBastidor();
+            $coche->imagen =  $nombre;
+            $coche->save();
+            return redirect("/coche");
+        } else {
+            return back();
+        }
+        
     }
 
     /**
