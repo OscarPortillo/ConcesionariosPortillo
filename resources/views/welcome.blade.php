@@ -134,7 +134,7 @@
                     <a href="/coche">Coches</a>
                     @guest
                         @else
-                            <a href="/users/{{Auth::user()->id}}">Mi perfil </a>
+                            <a href="/users/miperfil/{{Auth::user()->id}}">Mi perfil </a>
                             @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
                                 <a href="/users">Usuarios</a>
                                 <a href="/empleado">Empleados</a>

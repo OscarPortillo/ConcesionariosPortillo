@@ -17,6 +17,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/users', 'UserController');
+Route::get('/users/miperfil/{id}', 'UserController@miPerfil');
 Route::resource('/empleado', 'EmpleadoController');
 Route::resource('/cliente', 'ClienteController');
 

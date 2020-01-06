@@ -159,4 +159,16 @@ class UserController extends Controller
             }
         }
     }
+    public function miPerfil($id)
+    {
+        $usuario = User::findOrFail($id);
+        $roles = Role::all();
+        $user = Auth::user(); // obtengo el usuario actualmente logueado
+        if($user->id == $usuario->id){
+            return view('user.show', ["usuario"=>$usuario],['roles' => $roles]);
+        } else {
+            //dd("no es tu usario wey");
+            return view('errors.403');
+        }
+    }
   }

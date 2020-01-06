@@ -52,7 +52,7 @@
                         @guest
                         @else
                             <li class="nav-item active listaCabecera">
-                                <a class="nav-link" href="/users/{{Auth::user()->id}}">Mi perfil </a>
+                                <a class="nav-link" href="/users/miperfil/{{Auth::user()->id}}">Mi perfil </a>
                             </li>
                             @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
                                 
