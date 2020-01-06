@@ -74,8 +74,22 @@
                             </tbody>
                         </table>
                         @else
+                            @if(Auth::user()->role_id == 1 || Auth::user()->role_id == 2 )
+                                <div class="alert alert-danger">
+                                    <h1>No hay ventas!!!</h1>
+                                </div>
+                            @endif
+                        @endif
+
+                        @if(Auth::user()->role_id == 2 && $contadorVentasEmpleado == 0)
                             <div class="alert alert-danger">
-                                <h1>No hay ventas!!!</h1>
+                                <h1>¡No tienes ventas asignadas!</h1>
+                            </div>
+                        @endif
+                        @if(Auth::user()->role_id == 3 && $contadorVentasCliente == 0)
+                            <div class="alert alert-danger">
+                                <h1>¡No has realizado ninguna compra!</h1>
+                                <a class="css-boton boton-primario" href="/coche">Compra coches.</a>
                             </div>
                         @endif
                     </div>                                    

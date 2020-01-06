@@ -65,10 +65,15 @@
                                 <li class="nav-item active listaCabecera">
                                     <a class="nav-link" href="/cliente">Clientes </a>
                                 </li>
+                                <li class="nav-item active listaCabecera">
+                                    <a class="nav-link" href="/ventas">Ventas </a>
+                                </li>                            
                             @endif
+                            @if(Auth::user()->role_id == '3')
                             <li class="nav-item active listaCabecera">
-                                <a class="nav-link" href="/ventas">Ventas </a>
-                            </li>                            
+                                <a class="nav-link" href="/ventas">Mis compras </a>
+                            </li>  
+                            @endif
                             <li class="nav-item active listaCabecera">
                                 <a class="nav-link" href="/home">Más...</a>
                             </li>

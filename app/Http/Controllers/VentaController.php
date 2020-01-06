@@ -138,18 +138,29 @@ class VentaController extends Controller
         $usuarios = User::all();
         $coches = Coche::all();
         $estados  = [];
+        $contadorVentasCliente = 0;
+        $contadorVentasEmpleado = 0;
         foreach ($ventas as $key => $venta) {
+            if($user->id == $venta->id_cliente){
+                $contadorVentasCliente++;
+            }
+            if($user->id == $venta->id_empleado){
+                $contadorVentasEmpleado++;
+            }
             if(!in_array($venta->estado, $estados, true)){
                 array_push($estados, $venta->estado);//me guardo los estados sin repetirse
             }
         }
+        //dd($contadorVentasEmpleado);
         return view("venta.index",
             [
                 "ventas"=>$ventas,
                 "usuarios"=>$usuarios,
                 "coches"=>$coches,
                 "estados"=>$estados,
-                "user" => $user
+                "user" => $user,
+                "contadorVentasEmpleado" => $contadorVentasEmpleado,
+                "contadorVentasCliente" => $contadorVentasCliente
             ]);
     }
 

@@ -141,6 +141,9 @@
                                 <a href="/cliente">Clientes</a>
                                 <a href="/ventas">Ventas</a>
                             @endif
+                            @if(Auth::user()->role_id == '3')
+                                <a href="/ventas">Mis Compras</a>
+                            @endif
                         <a href="/home">Más...</a>
                     @endguest
                 </div>
