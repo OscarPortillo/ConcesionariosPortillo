@@ -132,11 +132,17 @@
 
                 <div class="links">
                     <a href="/coche">Coches</a>
-                    <a href="/users">Usuarios</a>
-                    <a href="/empleado">Empleados</a>
-                    <a href="/cliente">Clientes</a>
-                    <a href="/ventas">Ventas</a>
-                    <a href="/home">Más...</a>
+                    @guest
+                        @else
+                            <a href="/users/{{Auth::user()->id}}">Mi perfil </a>
+                            @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
+                                <a href="/users">Usuarios</a>
+                                <a href="/empleado">Empleados</a>
+                                <a href="/cliente">Clientes</a>
+                                <a href="/ventas">Ventas</a>
+                            @endif
+                        <a href="/home">Más...</a>
+                    @endguest
                 </div>
             </div> <!--CONTENT-->
         </div>
