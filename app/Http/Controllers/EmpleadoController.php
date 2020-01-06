@@ -8,6 +8,7 @@ use App\Role;
 use App\Venta;
 use Session;
 use Auth;
+use DB;
 
 class EmpleadoController extends Controller
 {
@@ -146,8 +147,16 @@ class EmpleadoController extends Controller
     public function destroy($id)
     {
       $this->authorize('delete', User::class);
+      //User::destroy($id);
+      //return back();
+      $empleVenta = DB::table('ventas')->where('id_empleado', $id)->first();
+      if($empleVenta) {
+        Session::flash('errorBorrarEmpleado', "El empleado no se puede borrar, tiene ventas pendientes...");
+        return back();
+      } else{
         User::destroy($id);
         return back();
+      }
     }
 
     /*public function comprobarVentasPendientes(){

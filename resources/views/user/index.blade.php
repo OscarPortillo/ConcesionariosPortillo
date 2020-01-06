@@ -15,6 +15,12 @@
                     <br>
                     @if(count($usuarios) != 0)
                     <div class="table-responsive">
+                        @if (Session::has('errorBorrarAdmin'))
+                            <div class="alert alert-danger">{{ Session::get('errorBorrarAdmin') }}</div>
+                        @endif
+                        @if (Session::has('errorBorrarEmpleado'))
+                            <div class="alert alert-danger">{{ Session::get('errorBorrarEmpleado') }}</div>
+                        @endif
                         <table class="table">
                             <thead>
                                 <tr>

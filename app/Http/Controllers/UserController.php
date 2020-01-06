@@ -7,6 +7,7 @@ use App\User;
 use App\Role;
 use Session;
 use Auth;
+use DB;
 
 class UserController extends Controller
 {
@@ -142,7 +143,20 @@ class UserController extends Controller
     public function destroy($id)
     {
         $this->authorize('delete', User::class);
-        User::destroy($id);
-        return back();
+        $user = User::findOrFail($id);
+        //dd($user);
+        if($user->role_id == 1){
+            Session::flash('errorBorrarAdmin', "El administrador no se puede borrar...");
+            return back();
+        } else {
+            $empleVenta = DB::table('ventas')->where('id_empleado', $id)->first();
+            if($empleVenta) {
+                Session::flash('errorBorrarEmpleado', "El empleado no se puede borrar, tiene ventas pendientes...");
+                return back();
+            } else{
+                User::destroy($id);
+                return back();
+            }
+        }
     }
   }

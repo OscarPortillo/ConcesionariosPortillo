@@ -16,6 +16,10 @@
                     <input class="form-control" id="misUsuarios" type="text" placeholder="Buscar...">
                     <br>
                     <div class="table-responsive">
+                        @if (Session::has('errorBorrarEmpleado'))
+                            <div class="alert alert-danger">{{ Session::get('errorBorrarEmpleado') }}</div>
+                        @endif
+                        
                         <table class="table">
                         <thead>
                             <tr>

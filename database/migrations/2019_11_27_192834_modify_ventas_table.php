@@ -15,7 +15,7 @@ class ModifyVentasTable extends Migration
     {
         Schema::table('ventas', function (Blueprint $table) {
             $table->integer('id_cliente')->unsigned()->after('id');
-            $table->foreign('id_cliente')->references('id')->on('users');
+            $table->foreign('id_cliente')->references('id')->on('users')->onDelete('cascade');
 
             $table->integer('id_empleado')->unsigned()->after('id_cliente');
             $table->foreign('id_empleado')->references('id')->on('users');
