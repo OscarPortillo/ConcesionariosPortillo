@@ -74,7 +74,7 @@
                             </tbody>
                         </table>
                         @else
-                            @if(Auth::user()->role_id == 1 || Auth::user()->role_id == 2 )
+                            @if(Auth::user()->role_id == 1)
                                 <div class="alert alert-danger">
                                     <h1>No hay ventas!!!</h1>
                                 </div>
