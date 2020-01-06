@@ -29,9 +29,9 @@
                                                 Ver PDF'S
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" target="_blank" href="../archivos/{{$venta->renta}}">Renta</a>
-                                        <a class="dropdown-item" target="_blank" href="../archivos/{{$venta->dni_cliente}}">DNI</a>
-                                        <a class="dropdown-item" target="_blank" href="../archivos/{{$venta->licenciaConducir}}">Carné</a>
+                                        <a class="dropdown-item" target="_blank" href="/archivos/{{$venta->renta}}">Renta</a>
+                                        <a class="dropdown-item" target="_blank" href="/archivos/{{$venta->dni_cliente}}">DNI</a>
+                                        <a class="dropdown-item" target="_blank" href="/archivos/{{$venta->licenciaConducir}}">Carné</a>
                             		</div>
                                 </div>
                             </div>
