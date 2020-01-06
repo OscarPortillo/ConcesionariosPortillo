@@ -49,21 +49,30 @@
                         <li class="nav-item active listaCabecera">
                             <a class="nav-link" href="/coche">Coches </a>
                         </li>
-                        <li class="nav-item active listaCabecera">
-                            <a class="nav-link" href="/empleado">Empleados </a>
-                        </li>
-                        <li class="nav-item active listaCabecera">
-                            <a class="nav-link" href="/users">Usuarios </a>
-                        </li>
-                        <li class="nav-item active listaCabecera">
-                            <a class="nav-link" href="/cliente">Clientes </a>
-                        </li>
-                        <li class="nav-item active listaCabecera">
-                            <a class="nav-link" href="/ventas">Ventas </a>
-                        </li>
-                        <li class="nav-item active listaCabecera">
-                            <a class="nav-link" href="/home">Más...</a>
-                        </li>
+                        @guest
+                        @else
+                            <li class="nav-item active listaCabecera">
+                                <a class="nav-link" href="/users/{{Auth::user()->id}}">Mi perfil </a>
+                            </li>
+                            @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
+                                
+                                <li class="nav-item active listaCabecera">
+                                    <a class="nav-link" href="/empleado">Empleados </a>
+                                </li>
+                                <li class="nav-item active listaCabecera">
+                                    <a class="nav-link" href="/users">Usuarios </a>
+                                </li>
+                                <li class="nav-item active listaCabecera">
+                                    <a class="nav-link" href="/cliente">Clientes </a>
+                                </li>
+                            @endif
+                            <li class="nav-item active listaCabecera">
+                                <a class="nav-link" href="/ventas">Ventas </a>
+                            </li>                            
+                            <li class="nav-item active listaCabecera">
+                                <a class="nav-link" href="/home">Más...</a>
+                            </li>
+                        @endguest                        
                     </ul>
 
 

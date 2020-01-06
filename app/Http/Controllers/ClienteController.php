@@ -128,11 +128,11 @@ class ClienteController extends Controller
         'telefono' => 'required|numeric',
         'role_id' => 'required|numeric',
       ];
+      $request->validate($reglas);
       if($request->password != $request->confirmarContraseña){//comprueba que las contraseñas sean iguales
         Session::flash('confirmarContraseña', "Las contraseñas no coinciden!!! Por favor introduzca datos correctos...");
         return back();
-      }else {
-        $request->validate($reglas);      
+      }else {        
         $cliente = User::findOrFail($id);
         $cliente->fill($request->all());
         $cliente->password = bcrypt($cliente->password);

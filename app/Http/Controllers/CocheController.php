@@ -55,7 +55,17 @@ class CocheController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
-        //dd($this->generarBastidor()); 
+        //dd($this->generarBastidor());
+        $reglas =[
+                //'numeroBastidor' => 'required|unique:coches',
+                'marca'=>'required|max:255|min:3',
+                'imagen'=>'required',
+                'modelo'=>'required|max:255|min:1',
+                'precio'=>'required|numeric',
+                'año'=>'required|min:2',
+                'detalle'=>'required|min:10',
+            ];
+            $request->validate($reglas);
         if($request->hasFile("imagen")){
             $archivo = $request->file("imagen");
             //$nombre = time().$archivo->getClientOriginalName();
@@ -63,15 +73,7 @@ class CocheController extends Controller
             $archivo->move(public_path()."/images",$nombre);
 
             ///////////////////////////////////
-            $reglas =[
-                //'numeroBastidor' => 'required|unique:coches',
-                'marca'=>'required|max:255|min:3',
-                'modelo'=>'required|max:255|min:1',
-                'precio'=>'required|numeric',
-                'año'=>'required|min:2',
-                'detalle'=>'required|min:10',
-            ];
-            $request->validate($reglas);
+            
             $coche = new Coche();
             $bastidor = new Controller(); 
             $coche->fill($request->all());
@@ -123,13 +125,6 @@ class CocheController extends Controller
     public function update(Request $request, $id)
     {
         //dd($request->imagenVieja);
-        $nombre = "";
-        if($request->hasFile("imagen")){
-            $archivo = $request->file("imagen");
-            $nombre = time().$request->marca.$request->modelo;
-            $archivo->move(public_path()."/images",$nombre);
-        }
-        //dd($nombre);
         $reglas =[
             //'matricula' =>'required|max:7|min:7',
             'numeroBastidor'=>'required|unique:coches,numeroBastidor,' .$request->id,
@@ -138,7 +133,16 @@ class CocheController extends Controller
             'precio'=>'required|numeric',
             'año'=>'required|min:2',
             'detalle'=>'required|min:2'
-        ]; 
+        ];
+        $request->validate($reglas);
+        $nombre = "";
+        if($request->hasFile("imagen")){
+            $archivo = $request->file("imagen");
+            $nombre = time().$request->marca.$request->modelo;
+            $archivo->move(public_path()."/images",$nombre);
+        }
+        //dd($nombre);
+        
         $coche = Coche::findOrFail($id);
         $coche->fill($request->all());
         if ( $nombre == "") {

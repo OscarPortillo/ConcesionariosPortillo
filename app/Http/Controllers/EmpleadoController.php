@@ -131,11 +131,11 @@ class EmpleadoController extends Controller
         'telefono' => 'required|numeric',
         'role_id' => 'required|numeric',
       ];
+      $request->validate($reglas);
       if($request->password != $request->confirmarContraseña){//comprueba que las contraseñas sean iguales
         Session::flash('confirmarContraseña', "Las contraseñas no coinciden!!! Por favor introduzca datos correctos...");
         return back();
       }else {
-        $request->validate($reglas);
         $empleado = User::findOrFail($id);
         $empleado->fill($request->all());
         $empleado->password = bcrypt($empleado->password);
