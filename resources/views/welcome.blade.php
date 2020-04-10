@@ -235,16 +235,26 @@
                 <div class="col-md-6 mb-md-0 mb-3">
                     <h5 class="text-uppercase font-weight-bold">Siguenos en nuestras redes sociales</h5>
                     <section class="social">
-                        <button class="icon-btn facebook"><i class="fab fa-facebook"></i></button>
-                        <button class="icon-btn twitter"><i class="fab fa-twitter"></i></i></button>
-                        <button class="icon-btn google"><i class="fab fa-google-plus"></i></button>
-                        <button class="icon-btn instagram"><i class="fab fa-instagram"></i></button>
-                        <button class="icon-btn github"><i class="fab fa-github"></i></button>
+                        <button class="icon-btn facebook" onclick="window.location.href='https://www.facebook.com/'">
+                            <i class="fab fa-facebook"></i>
+                        </button>
+                        <button class="icon-btn twitter" onclick="window.location.href='https://twitter.com/oscar_9414'">
+                            <i class="fab fa-twitter"></i></i>
+                        </button>
+                        <button class="icon-btn bitbucket" onclick="window.location.href='https://bitbucket.org/oscar_9414/'">
+                            <i class="fab fa-bitbucket"></i>
+                        </button>
+                        <button class="icon-btn instagram" onclick="window.location.href='https://www.instagram.com/oscar_9414/'">
+                            <i class="fab fa-instagram"></i>
+                        </button>
+                        <button class="icon-btn github" onclick="window.location.href='https://github.com/oscarportillo'">
+                            <i class="fab fa-github"></i>
+                        </button>
                     </section>
                 </div>
             </div>
         </div>
-        <div class="footer-copyright text-center py-3">© 2019 Concesionarios Portillo:
+        <div class="footer-copyright text-center py-3">© 2020 Concesionarios Portillo:
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

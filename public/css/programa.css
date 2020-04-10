@@ -279,12 +279,12 @@ ul.topnav li.right {
   background-color: #4099FF;
 }
 
-.google {
-  color: #DB5A3C;
+.bitbucket {
+  color: #2684FF;
 }
 
-.google:hover {
-  background-color: #DB5A3C;
+.bitbucket:hover {
+  background-color: rgb(7, 71, 166);
 }
 
 .instagram {

@@ -15,10 +15,10 @@ class UsersTableSeeder extends Seeder
             // 'age' => 20,
 
             'dni' => '87547785X',
-            'nombre' => 'Administrador',
+            'nombre' => 'Oscar',
             'apellido' => 'Portillo',
             'direccion' => 'Alameda Lorem, 132A 19ºH',
-            'email' => 'admin@gmail.com',
+            'email' => 'oscar@gmail.com',
             'password' => bcrypt('secret'),
             'telefono' => '662061545',
             'role_id' => 1,
