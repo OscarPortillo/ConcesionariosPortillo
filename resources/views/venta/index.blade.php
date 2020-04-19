@@ -5,7 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Ventas pendientes</div>
+                <div class="card-header">Ventas pendientes
+                    <a class="btn boton-primario" href="/venta/export">Exportar excel</a>
+                </div>
                 <div class="card-body">
                     <div class="table-responsive">
                        @if(count($ventas) != 0)

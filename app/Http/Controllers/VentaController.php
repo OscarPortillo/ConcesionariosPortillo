@@ -11,7 +11,9 @@ use Auth;
 use Mail;
 use Session;
 use Carbon\Carbon;
-
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ExcelExport;
 use Illuminate\Http\Request;
 
 class VentaController extends Controller
@@ -228,5 +230,11 @@ class VentaController extends Controller
                 "empleado"=>$empleado,
                 "coche"=>$coche
             ]);
+    }
+    /*
+    Método para guardar el excel
+    */
+    public function export() {
+        return Excel::download(new ExcelExport(), 'ventas.xlsx');
     }
 }

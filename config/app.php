@@ -176,6 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         /***PDF****/
         Barryvdh\DomPDF\ServiceProvider::class,
+        /***************Generar Excel***************/
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
     ],
 
@@ -228,6 +230,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        /********* Generar Excel ****************/
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];

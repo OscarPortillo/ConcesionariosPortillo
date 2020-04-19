@@ -11,6 +11,7 @@
 |
 */
 use \Carbon\Carbon;
+use App\Exports\ExcelExport;
 
 Route::get('/', function () {
     return view('welcome');
@@ -63,3 +64,7 @@ Route::resource('/pago', 'PagoController');
 Route::post('/pago', 'PagoController@pago');
 Route::resource('/solicitarPago', 'PagoController');
 /********** CASHIER PAGO ****************/
+
+
+/**************Rutas exportar excel**************/
+Route::get('venta/export', 'VentaController@export')->name('export');
