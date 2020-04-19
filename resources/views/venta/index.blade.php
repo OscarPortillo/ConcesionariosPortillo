@@ -6,7 +6,9 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Ventas pendientes
-                    <a class="btn boton-primario" href="/venta/export">Exportar excel</a>
+                     @if(Auth::user()->role_id == 1 || Auth::user()->role_id == 2 && $contadorVentasEmpleado != 0)
+                        <a class="btn boton-primario" href="/venta/export">Exportar excel</a>
+                    @endif
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

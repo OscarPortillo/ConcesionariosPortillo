@@ -2,8 +2,6 @@
 
 namespace App\Exports;
 
-use Illuminate\Contracts\View\View;
-use Maatwebsite\Excel\Concerns\FromView;
 use App\User;
 use App\Venta;
 use App\Coche;
@@ -15,7 +13,15 @@ use Mail;
 use Session;
 use Carbon\Carbon;
 
-class ExcelExport implements FromView
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Concerns\WithEvents;
+use Maatwebsite\Excel\Events\AfterSheet;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithTitle;
+
+class ExcelExport implements FromView, ShouldAutoSize, WithEvents, WithTitle
 {
     public function view(): View
     {
@@ -33,9 +39,6 @@ class ExcelExport implements FromView
             if($user->id == $venta->id_empleado){
                 $contadorVentasEmpleado++;
             }
-            if(!in_array($venta->estado, $estados, true)){
-                array_push($estados, $venta->estado);//me guardo los estados sin repetirse
-            }
         }
         //dd($contadorVentasEmpleado);
         return view("venta.excel",
@@ -48,5 +51,51 @@ class ExcelExport implements FromView
                 "contadorVentasEmpleado" => $contadorVentasEmpleado,
                 "contadorVentasCliente" => $contadorVentasCliente
             ]);
+    }
+
+    
+    /**
+     * @return array
+     */
+    public function registerEvents(): array
+    {
+        $styleArray = [
+            'font' => [
+                'bold' => true,
+            ]
+        ];
+
+        return [
+            // Handle by a closure.
+            AfterSheet::class => function (AfterSheet $event) use ($styleArray) {
+                // $event->sheet->insertNewRowBefore(7, 2);
+                // $event->sheet->insertNewColumnBefore('A', 2);
+                $event->sheet->getStyle('A1:G1')->applyFromArray($styleArray);
+                $event->sheet->setCellValue('E27', '=SUM(E2:E26)');
+            },
+        ];
+    }
+
+
+    public function headings(): array
+    {
+        return [
+            'Clientes',
+            'DNI Cliente',
+            'Empleado',
+            'DNI Empleado',
+            'Marca',
+            'Matrícula',
+            'Precio',
+        ];
+    }
+
+    /**
+     * @return string
+     */
+    public function title(): string
+    {
+    	//Nombre a la hoja del excel
+        return 'Ventas Concesionarios Portillo';
     }
 }
