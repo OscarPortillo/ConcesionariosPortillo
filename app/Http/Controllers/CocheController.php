@@ -95,8 +95,9 @@ class CocheController extends Controller
      */
     public function show($id)
     {
+        $user = Auth::user();
         $coche = Coche::findOrFail($id);
-        return view("coche.show",["coche"=>$coche]);
+        return view("coche.show",["coche"=>$coche, 'user' => $user]);
     }
 
     /**

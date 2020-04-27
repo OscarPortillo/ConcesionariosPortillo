@@ -8,6 +8,13 @@
 
                 <div class="card-body">
                     <a href="/coche" class="css-boton boton-primario">Atrás</a>
+                    @can('update', $user)
+                        <a href="/coche/{{$coche->id}}/edit" class="css-boton boton-primario">Editar</a>
+                    @endcan
+                    @can('delete', $user)
+                        <a href="/coche/{{$coche->id}}/borrar" class="css-boton boton-borrarCoche">Borrar</a>
+                    @endcan
+                    <a href="/ventas/{{$coche->id}}/comprar" class="css-boton boton-primario">Comprar</a>
                     <h1 style="text-align: center;">Detalles del {{$coche->marca}} {{$coche->modelo}}.</h1>
                         <div class="row">
                             <div class="col-md-8">

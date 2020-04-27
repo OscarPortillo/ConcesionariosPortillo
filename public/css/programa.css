@@ -123,14 +123,14 @@ body {
 }
 
 .boton-primario:hover {
-	box-shadow: 0 2px 6px rgba(50, 50, 90,.1);
+  box-shadow: 0 2px 6px rgba(50, 50, 90,.1);
 	text-decoration: none;
-  	background-color: #449d44;
-  	color: #fff;
+  background-color: #449d44;
+	color: #fff;
 }
 
 .boton-exito {
-  	background: rgb(28, 184, 65); /* verde */
+  background: rgb(28, 184, 65); /* verde */
 }
 
 .boton-info {
@@ -139,7 +139,20 @@ body {
 }
 
 .boton-advertencia {
-  	background: rgb(223, 117, 20); /* color naranja */
+  background: rgb(223, 117, 20); /* color naranja */
+}
+.boton-advertencia:hover {
+  background: rgb(223, 117, 20); /* color naranja */
+  text-decoration: none;
+}
+.boton-borrarCoche {
+  background-color: #f7764f;
+  color: white;
+}
+.boton-borrarCoche:hover {
+  background-color: red;
+  color: white;
+  text-decoration: none;
 }
 
 .boton-error {
@@ -182,6 +195,7 @@ ul.topnav li a {
 ul.topnav li a:hover:not(.active) {
 	background-color: #78d446;
 	color: white;
+  border-radius: 10px;
 }
 
 ul.topnav li a.active {
