@@ -73,9 +73,9 @@ class CocheController extends Controller
             $archivo->move(public_path()."/images",$nombre);
 
             ///////////////////////////////////
-            
+
             $coche = new Coche();
-            $bastidor = new Controller(); 
+            $bastidor = new Controller();
             $coche->fill($request->all());
             $coche->numeroBastidor =  $bastidor->generarBastidor();
             $coche->imagen =  $nombre;
@@ -84,7 +84,7 @@ class CocheController extends Controller
         } else {
             return back();
         }
-        
+
     }
 
     /**
@@ -143,7 +143,7 @@ class CocheController extends Controller
             $archivo->move(public_path()."/images",$nombre);
         }
         //dd($nombre);
-        
+
         $coche = Coche::findOrFail($id);
         $coche->fill($request->all());
         if ( $nombre == "") {
@@ -175,5 +175,5 @@ class CocheController extends Controller
     }
 
 
-    
+
 }

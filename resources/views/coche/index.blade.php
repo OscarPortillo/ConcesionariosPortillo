@@ -26,12 +26,12 @@
                         <section class="sectionCoche">
                             @foreach ($coches as $coche)
                                 <div class="infoCoche">
-                                    
+
                                     <div class="modal fade" id="coche{{$coche->id}}" tabindex="-1" role="dialog" aria-labelledby="modalVerDetalleCoche" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    
+
                                                     <ul class="topnav">
                                                         <li>
                                                             <a class="modal-title" id="modalVerDetalleCoche">Detalles del {{$coche->marca}} {{$coche->modelo}} </a>
