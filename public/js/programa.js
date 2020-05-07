@@ -23,7 +23,7 @@ function cambiarValorVenta(){
   }
   $('#estadoVenta').change( function() {
     //alert("El estado cambió");
-    $valor = $('#estadoVenta').val();   
+    $valor = $('#estadoVenta').val();
     $('#cambiosVenta').show();
     if( $valor == 'Pagado') {
       $('#enviarCorreo').show();
@@ -100,12 +100,12 @@ function showDivs(n) {
   if (n > x.length) {slideIndex = 1}
   if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+    x[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" w3-white", "");
   }
-  x[slideIndex-1].style.display = "block";  
+  x[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " w3-white";
 }
 /*******************SLIDER***********************/
@@ -128,9 +128,9 @@ function ordenarPorPrecioAscendente(){
         var b = $(b).data('sort')
         return (a > b) ? (a > b) ? 1 : 0 : -1;
     });
-      console.log(divOrder.parent());    
+      console.log(divOrder.parent());
     $(".sectionCoche").html("");//para vaciar el contenedor
-    $(".sectionCoche").append(divOrder.parent());//añade los elementos ya ordenados 
+    $(".sectionCoche").append(divOrder.parent());//añade los elementos ya ordenados
     //incluido con el elemento padre que es el que tiene toda la info del coche
   });
 }
@@ -142,9 +142,9 @@ function ordenarPorPrecioDescendente(){
         var b = $(b).data('sort')
         return (a < b) ? (a < b) ? 1 : 0 : -1;
     });
-      console.log(divOrder.parent());    
+      console.log(divOrder.parent());
     $(".sectionCoche").html("");//para vaciar el contenedor
-    $(".sectionCoche").append(divOrder.parent());//añade los elementos ya ordenados 
+    $(".sectionCoche").append(divOrder.parent());//añade los elementos ya ordenados
     //incluido con el elemento padre que es el que tiene toda la info del coche
   });
 }

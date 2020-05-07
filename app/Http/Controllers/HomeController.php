@@ -41,4 +41,8 @@ class HomeController extends Controller
             ]);*/
         return view('home');
     }
+
+    public function presidente() {
+        return view('presi.index');
+    }
 }

@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="{{ asset('css/programa.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/programa.js') }}"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 
@@ -53,7 +54,7 @@
         text-align: center;
     }
 
-    
+
 
     .links > a {
         color: black;
@@ -88,7 +89,7 @@
   width: 25%;
 }
 
-/* Clear floats after filas */ 
+/* Clear floats after filas */
 .fila:after {
   content: "";
   display: table;
@@ -138,6 +139,7 @@
                 </div>
 
                 <div class="links">
+                    <a href="/presidente">Nuestro Presidente</a>
                     <a href="/coche">Coches</a>
                     @guest
                         @else

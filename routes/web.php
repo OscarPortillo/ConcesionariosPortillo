@@ -48,10 +48,7 @@ Route::get('ventas/{id}/enviarEmailDeCompra', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/presidente', 'HomeController@presidente');
 
 /********** PARA EL ENVÍO DEL CORREO ****************/
 
