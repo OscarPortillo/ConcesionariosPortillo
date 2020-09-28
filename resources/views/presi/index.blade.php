@@ -23,7 +23,7 @@
                     -  Bill Bryson
                     </p>
                     <!-- Redes sociales -->
-                    <a class="px-2 fa-lg li-ic" href="https://www.linkedin.com/in/oscar-portillo-5a4a611a6/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="px-2 fa-lg li-ic" href="https://www.linkedin.com/in/oscar-portillo-herrera-5a4a611a6/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     <a class="px-2 fa-lg tw-ic" href="https://twitter.com/oscar_9414" target="_blank"><i class="fab fa-twitter"></i></a>
                     <a class="px-2 fa-lg fb-ic" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
 

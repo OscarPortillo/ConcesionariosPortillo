@@ -140,7 +140,7 @@
                         <button class="icon-btn bitbucket" onclick="window.location.href='https://bitbucket.org/oscar_9414/'">
                             <i class="fab fa-bitbucket"></i>
                         </button>
-                        <button class="icon-btn instagram" onclick="window.location.href='https://www.instagram.com/oscar_9414/'">
+                        <button class="icon-btn instagram" onclick="window.location.href='https://www.instagram.com/ohportillo/'">
                             <i class="fab fa-instagram"></i>
                         </button>
                         <button class="icon-btn github" onclick="window.location.href='https://github.com/oscarportillo'">
